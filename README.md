@@ -1,1 +1,1 @@
-# gql-yoga
+# GraphQL-Yoga
