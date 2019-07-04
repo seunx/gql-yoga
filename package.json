@@ -1,0 +1,27 @@
+{
+  "name": "gql-yoga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "graphql-yoga": "^1.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seun-O/gql-yoga.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seun-O/gql-yoga/issues"
+  },
+  "homepage": "https://github.com/Seun-O/gql-yoga#readme"
+}
