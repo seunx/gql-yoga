@@ -1,0 +1,32 @@
+enum AnimalType {
+  Dog
+  Cat
+  Lion
+}
+interface Animal {
+  type: AnimalType!
+  hasTail: Boolean
+  name: String
+}
+type Lion implements Animal {
+  type: AnimalType!
+  hasTail: Boolean
+  name: String
+  isStrong: Boolean
+}
+type Dog implements Animal {
+  type: AnimalType!
+  hasTail: Boolean
+  personality: String
+  name: String
+}
+type Cat implements Animal {
+  type: AnimalType!
+  hasTail: Boolean
+  lives: Int
+  name: String
+}
+
+type Query {
+  getAnimals: [Animal]
+}

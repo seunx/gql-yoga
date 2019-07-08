@@ -1,17 +1,20 @@
 type Person {
-	id: ID
-	name: String
+  id: ID
+  name: String
 }
 
 input NewPersonInput {
-	id: ID!
-	name: String!
+  id: ID!
+  name: String!
 }
 
+union SearchResults = Person | Cat | Dog | Lion
+
 type Query {
-	getPerson(id: ID): Person
-	getPeople: [Person]
+  getPerson(id: ID): Person
+  getPeople: [Person]
+  searchResults: [SearchResults]
 }
 type Mutation {
-	newPerson(input: NewPersonInput!): Person!
+  newPerson(input: NewPersonInput!): Person!
 }
