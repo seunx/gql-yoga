@@ -7,7 +7,13 @@ const typeDefs = require('./typeDefs');
 // Generated Prisma Client
 const { prisma } = require('./src/generated/prisma-client');
 
-const server = new GraphQLServer({ typeDefs, resolvers, context: { prisma } });
+const server = new GraphQLServer({
+	typeDefs,
+	resolvers,
+	context: req => {
+		return { ...req, prisma };
+	}
+});
 
 // GraphQL Server configuration options
 const options = {

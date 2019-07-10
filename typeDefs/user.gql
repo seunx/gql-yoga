@@ -1,0 +1,27 @@
+type User {
+	id: ID!
+	name: String!
+	email: String!
+	password: String!
+	links: [Link!]!
+}
+
+input RegisterInput {
+	email: String!
+	password: String!
+	name: String!
+}
+input LoginInput {
+	password: String!
+	name: String!
+}
+
+type AuthPayload {
+	token: String
+	user: User
+}
+
+type Mutation {
+	register(input: RegisterInput!): AuthPayload
+	login(input: LoginInput!): AuthPayload
+}
