@@ -4,6 +4,13 @@ type User {
 	email: String!
 	password: String!
 	links: [Link!]!
+	votes: [Vote!]!
+}
+
+type Vote {
+	id: ID!
+	link: Link!
+	user: User!
 }
 
 input RegisterInput {
@@ -24,4 +31,5 @@ type AuthPayload {
 type Mutation {
 	register(input: RegisterInput!): AuthPayload
 	login(input: LoginInput!): AuthPayload
+	vote(linkId: ID!): Vote
 }

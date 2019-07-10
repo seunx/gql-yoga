@@ -3,10 +3,12 @@ type Link {
 	description: String!
 	url: String!
 	postedBy: User
+	votes: [Vote!]!
 }
 
 type Subscription {
 	newLink: Link
+	newVote: Vote
 }
 
 type Query {
