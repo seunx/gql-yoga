@@ -4,7 +4,10 @@ const resolvers = require('./resolvers');
 // Type definitions
 const typeDefs = require('./typeDefs');
 
-const server = new GraphQLServer({ typeDefs, resolvers });
+// Generated Prisma Client
+const { prisma } = require('./src/generated/prisma-client');
+
+const server = new GraphQLServer({ typeDefs, resolvers, context: { prisma } });
 
 // GraphQL Server configuration options
 const options = {
