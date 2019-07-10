@@ -13,7 +13,7 @@ input RegisterInput {
 }
 input LoginInput {
 	password: String!
-	name: String!
+	email: String!
 }
 
 type AuthPayload {

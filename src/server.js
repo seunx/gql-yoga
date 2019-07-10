@@ -5,7 +5,7 @@ const resolvers = require('./resolvers');
 const typeDefs = require('./typeDefs');
 
 // Generated Prisma Client
-const { prisma } = require('./src/generated/prisma-client');
+const { prisma } = require('./generated/prisma-client');
 
 const server = new GraphQLServer({
 	typeDefs,

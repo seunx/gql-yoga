@@ -5,6 +5,10 @@ type Link {
 	postedBy: User
 }
 
+type Subscription {
+	newLink: Link
+}
+
 type Query {
 	feed: [Link!]!
 	link(id: ID!): Link

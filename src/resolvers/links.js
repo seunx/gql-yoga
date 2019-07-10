@@ -1,5 +1,16 @@
 const { getUserId } = require('../utils');
 
+const newLinkSubscribe = (root, args, ctx, info) => {
+	return ctx.prisma.$subscribe.link({ mutation_in: ['CREATED'] }).node();
+};
+
+const newLink = {
+	subscribe: newLinkSubscribe,
+	resolve: payload => {
+		return payload;
+	}
+};
+
 module.exports = {
 	Query: {
 		feed: (root, args, ctx, info) => {
@@ -15,6 +26,9 @@ module.exports = {
 				postedBy: { connect: { id: userId } }
 			});
 		}
+	},
+	Subscription: {
+		newLink
 	},
 	Link: {
 		postedBy(parent, args, ctx) {
